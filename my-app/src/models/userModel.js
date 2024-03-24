@@ -1,4 +1,4 @@
-import { data } from "autoprefixer";
+
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
