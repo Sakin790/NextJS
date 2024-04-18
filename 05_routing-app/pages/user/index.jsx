@@ -13,11 +13,10 @@ const index = () => {
 
   return (
     <div>
-      <h1>USER ROOT</h1>
-      {users &&
-        users.users &&
-        users.users.map((users) => <li key={users.id}>{users.firstName}</li>)}
-    </div>
+    <h1>USER ROOT</h1>
+    {users?.users?.map(user => <li key={user.id}>{user.firstName}</li>)}
+  </div>
+  
   );
 };
 
