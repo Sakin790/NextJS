@@ -1,0 +1,24 @@
+import React, { useState, useEffect } from "react";
+
+const index = () => {
+  const [users, setUser] = useState([]);
+  console.log("User", users);
+  useEffect(() => {
+    async function fatchUser() {
+      const data = await fetch("https://dummyjson.com/users");
+      setUser(await data.json());
+    }
+    fatchUser();
+  }, []);
+
+  return (
+    <div>
+      <h1>USER ROOT</h1>
+      {users &&
+        users.users &&
+        users.users.map((users) => <li key={users.id}>{users.firstName}</li>)}
+    </div>
+  );
+};
+
+export default index;
